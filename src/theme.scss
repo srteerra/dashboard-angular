@@ -1,0 +1,111 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$dash-primary-palette: (
+  50: #ffffff,
+  100: #dcdcdc,
+  200: #c1c1c1,
+  300: #bababa,
+  400: #adadad,
+  500: #898989,
+  600: #585858,
+  700: #3b3b3b,
+  800: #2b2b2b,
+  900: #1a1a1a,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$dash-secundary-palette: (
+  50: #81b181,
+  100: #74aa74,
+  200: #67a267,
+  300: #5d985d,
+  400: #558b55,
+  500: #4e7e4e,
+  600: #467247,
+  700: #3e653f,
+  800: #365937,
+  900: #2b462c,
+  contrast: (
+    50: #000000,
+    100: #eeeaea,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$dash-primary: mat.define-palette($dash-primary-palette, 900);
+$dash-secundary: mat.define-palette($dash-secundary-palette, 900);
+$dash-warn: mat.define-palette(mat.$red-palette, 400);
+
+// Specify Comic Sans as the default font family for all levels
+$dash-typography: mat.define-typography-config(
+  $font-family: "Poppins",
+  $display-4:
+    mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3:
+    mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $display-2:
+    mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $display-1: mat.define-typography-level(34px, 40px, 400),
+  $headline: mat.define-typography-level(24px, 32px, 400),
+  $title: mat.define-typography-level(20px, 27px, 400),
+  $subheading-1: mat.define-typography-level(15px, 17px, 400),
+  $subheading-2: mat.define-typography-level(16px, 21px, 500),
+  $body-1: mat.define-typography-level(13px, 21px, 300),
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$dash-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $dash-primary,
+      accent: $dash-secundary,
+      warn: $dash-warn,
+    ),
+    typography: $dash-typography,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.core($dash-typography);
+@include mat.all-component-themes($dash-theme);

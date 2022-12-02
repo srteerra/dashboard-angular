@@ -1,0 +1,26 @@
+<div class="grid__2cols">
+  <div class="grid__item">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [title]="chartOptions.title"
+    ></apx-chart>
+  </div>
+  <div class="grid__item">
+    <apx-chart
+      [series]="chartOptionsPie.series"
+      [chart]="chartOptionsPie.chart"
+      [title]="chartOptionsPie.title"
+      [labels]="chartOptionsPie.labels"
+    ></apx-chart>
+  </div>
+  <div style="width: 100%; padding: 0 200px">
+    <apx-chart
+      [series]="chartOptionsLine.series"
+      [chart]="chartOptionsLine.chart"
+      [title]="chartOptionsLine.title"
+      [xaxis]="chartOptionsLine.xaxis"
+    ></apx-chart>
+  </div>
+</div>

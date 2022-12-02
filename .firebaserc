@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "restaurant-dashboard-e065f": {
+      "hosting": {
+        "dashboard-angular": [
+          "restaurant-dashboard-e065f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "restaurant-dashboard-e065f"
+  }
+}

@@ -1,0 +1,21 @@
+<div>
+  <div style="display: flex; justify-content: center; padding-bottom: 100px">
+    <h1 style="margin: 0 auto; font-weight: 800">Lista de productos</h1>
+  </div>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Pedidos</th>
+    </tr>
+    <tr *ngFor="let product of dataSource; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.nombre }}</td>
+      <td>{{ product.precio }}</td>
+      <td>{{ product.cantidad }}</td>
+      <td>{{ product.pedidos }}</td>
+    </tr>
+  </table>
+</div>
